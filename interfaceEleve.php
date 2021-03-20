@@ -18,12 +18,12 @@ require('config.php');
     <span id="position1">Utilisateur : <?php echo $prenom, ' ', $nom ?></span>
     <span id="position2">Type : <?php echo $type ?></span>
 </div>
-<div>
-    <span id="bandeau_vert"><a id="position3" href="deconnexion.php">Se déconnecter</a></span>
+<div id="bandeau_vert">
+    <span><a href="deconnexion.php">Se déconnecter</a></span>
 </div>
 <div>
     <h3 style="color: blue">
-        <center> Tablau de bord</center>
+        <div style="text-align: center;"> Tablau de bord</div>
     </h3>
 </div>
 <div>

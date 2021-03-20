@@ -31,7 +31,7 @@ require('config.php');
 </div>
 <div>
     <h3 style="color: blue">
-        <center> Bienvenue sur l'application QCM</center>
+        <div style="text-align: center;"> Bienvenue sur l'application QCM</div>
     </h3>
 </div>
 <div>
