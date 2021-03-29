@@ -28,7 +28,22 @@ require('config.php');
 		<span><a href="deconnexion.php">Se déconnecter</a></span>
 	</div>
 	<div>
-		<h3 style="color: blue"><center> Résultats par élève</center></h3>
+		<h3 style="color: blue"><center> Affectation d'un QCM</center></h3>
+	</div>
+	<div>
+		<center>
+		<span><h4>Séléction d'un QCM : <select name="listeQCM">
+			<?php
+			$sqlSelect = mysqli_query($connect, "SELECT Description, LibelleQCM  FROM theme, qcm WHERE theme.IdTheme=qcm.IdTheme" );
+			while($data=mysqli_fetch_array($sqlSelect)) 
+			    {
+			        echo '<option>'.$data['Description'].' : '.$data['LibelleQCM'].'</option>';
+			    }
+			?>
+		</select></h4>
+		</span>
+		<span><h4>Date : <?php echo date('d/m/Y');?> </h4></span>
+		</center>
 	</div>
 	<div>
 		<center>
@@ -38,14 +53,12 @@ require('config.php');
 					<th> Identifiant </th>
 					<th> Nom </th>
 					<th> Prénom </th>
-					<th> Moyenne </th>
-					<th> Disponnibles </th>
-					<th> Réalisés </th>
+					<th> Type </th>
+					<th> Affectation </th>
 				</tr>
 				<?php
 
 				$sqlUsers = mysqli_query($connect, "SELECT utilisateurs.idUtilisateur, enseignant.idUtilisateur AS 'idEns', nom, prenom FROM utilisateurs, enseignant ");
-				$sqlResultat = mysqli_query($connect, "SELECT eleve.idResultat, resultat.idResultat AS 'idResult', MoyenneQCM FROM eleve, resultat ");
 
 				while($data=mysqli_fetch_array($sqlUsers)) 
 				{
@@ -53,19 +66,25 @@ require('config.php');
 					$prenom = $data ['prenom'];
 					$idUtilisateur = $data['idUtilisateur'];
 					$Type = $data['idEns'];
-					$idResultat = $data['idResult'];
 
 					if ($idUtilisateur == $Type) 
 					{
+						$Type = 'Formateur';
 					}
 					else
 					{
-						echo ('<tr><td>'.$idUtilisateur.'</td><td>'.$nom.'</td><td>'.$prenom.'</td></tr>');
+						$Type = 'Elève';
 					}
+
+					echo ('<tr><td>'.$idUtilisateur.'</td><td>'.$nom.'</td><td>'.$prenom.'</td><td>'.$Type.'</td><td><input type="checkbox" name="checkAffectation" value="checked"></td></tr>');
 				}
 				?>
 			</thead>
 		</table>
+		</center>
+		<br>
+	</div>
+	<center><input type="submit" id='submit' name='affecterQCM' value='Valider'></center>
 </body>
 </html>
 
