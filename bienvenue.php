@@ -16,7 +16,7 @@ require('config.php');
 <body>
     <div id="container">
         <!-- zone de connexion -->
-        <form method="POST">
+        <form id="form" method="POST">
             <h1 style="color: blue;">Bonjour, <?php echo $prenom;?> cliquez sur le bouton <font color="red">ENTRER </font>pour continuer sur l'application QCM</h1>
             <input href="interfaceEleve.php" type="submit" id='submit' name='connexionInterface' value='ENTRER'>
         </form>

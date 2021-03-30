@@ -32,21 +32,21 @@ require('config.php');
 	</div>
 	<div>
 		<center>
-		<span><h4>Séléction d'un QCM : <select name="listeQCM">
-			<?php
-			$sqlSelect = mysqli_query($connect, "SELECT Description, LibelleQCM  FROM theme, qcm WHERE theme.IdTheme=qcm.IdTheme" );
-			while($data=mysqli_fetch_array($sqlSelect)) 
-			    {
-			        echo '<option>'.$data['Description'].' : '.$data['LibelleQCM'].'</option>';
-			    }
-			?>
-		</select></h4>
+			<span><h4>Séléction d'un QCM : <select name="listeQCM">
+				<?php
+				$sqlSelect = mysqli_query($connect, "SELECT Description, LibelleQCM  FROM theme, qcm WHERE theme.IdTheme=qcm.IdTheme" );
+				while($data=mysqli_fetch_array($sqlSelect)) 
+				{
+					echo '<option>'.$data['Description'].' : '.$data['LibelleQCM'].'</option>';
+				}
+				?>
+			</select></h4>
 		</span>
 		<span><h4>Date : <?php echo date('d/m/Y');?> </h4></span>
-		</center>
-	</div>
-	<div>
-		<center>
+	</center>
+</div>
+<div>
+	<center>
 		<table border="1">
 			<thead>
 				<tr>
@@ -62,7 +62,7 @@ require('config.php');
 
 				while($data=mysqli_fetch_array($sqlUsers)) 
 				{
-				    $nom = $data ['nom'];
+					$nom = $data ['nom'];
 					$prenom = $data ['prenom'];
 					$idUtilisateur = $data['idUtilisateur'];
 					$Type = $data['idEns'];
@@ -81,10 +81,10 @@ require('config.php');
 				?>
 			</thead>
 		</table>
-		</center>
-		<br>
-	</div>
-	<center><input type="submit" id='submit' name='affecterQCM' value='Valider'></center>
+	</center>
+	<br>
+</div>
+<center><input type="submit" id='submit' name='affecterQCM' value='Valider'></center>
 </body>
 </html>
 

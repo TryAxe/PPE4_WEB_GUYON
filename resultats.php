@@ -32,38 +32,38 @@ require('config.php');
 	</div>
 	<div>
 		<center>
-		<table border="1">
-			<thead>
-				<tr>
-					<th> Identifiant </th>
-					<th> Nom </th>
-					<th> Prénom </th>
-					<th> Moyenne </th>
-					<th> Disponnibles </th>
-					<th> Réalisés </th>
-				</tr>
-				<?php
+			<table border="1">
+				<thead>
+					<tr>
+						<th> Identifiant </th>
+						<th> Nom </th>
+						<th> Prénom </th>
+						<th> Moyenne </th>
+						<th> Disponnibles </th>
+						<th> Réalisés </th>
+					</tr>
+					<?php
 
-				$sqlUsers = mysqli_query($connect, "SELECT utilisateurs.idUtilisateur, enseignant.idUtilisateur AS 'idEns', nom, prenom FROM utilisateurs, enseignant ");
-				$sqlResultat = mysqli_query($connect, "SELECT eleve.idResultat, resultat.idResultat AS 'idResult', MoyenneQCM FROM eleve, resultat ");
+					$sqlUsers = mysqli_query($connect, "SELECT utilisateurs.idUtilisateur, enseignant.idUtilisateur AS 'idEns', nom, prenom FROM utilisateurs, enseignant ");
+					$sqlResultat = mysqli_query($connect, "SELECT eleve.idResultat, resultat.idResultat AS 'idResult', MoyenneQCM FROM eleve, resultat ");
 
-				while($data=mysqli_fetch_array($sqlUsers)) 
-				{
-				    $nom = $data ['nom'];
-					$prenom = $data ['prenom'];
-					$idUtilisateur = $data['idUtilisateur'];
-					$Type = $data['idEns'];
-					if ($idUtilisateur == $Type) 
+					while($data=mysqli_fetch_array($sqlUsers)) 
 					{
+						$nom = $data ['nom'];
+						$prenom = $data ['prenom'];
+						$idUtilisateur = $data['idUtilisateur'];
+						$Type = $data['idEns'];
+						if ($idUtilisateur == $Type) 
+						{
+						}
+						else
+						{
+							echo ('<tr><td>'.$idUtilisateur.'</td><td>'.$nom.'</td><td>'.$prenom.'</td></tr>');
+						}
 					}
-					else
-					{
-						echo ('<tr><td>'.$idUtilisateur.'</td><td>'.$nom.'</td><td>'.$prenom.'</td></tr>');
-					}
-				}
-				?>
-			</thead>
-		</table>
-</body>
-</html>
+					?>
+				</thead>
+			</table>
+		</body>
+		</html>
 

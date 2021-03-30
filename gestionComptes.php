@@ -15,7 +15,7 @@ require('config.php');
 </head>
 <body>
 	<div id="bandeau_bleu">
-		<span>Gestion des comptes </span>
+		<span>Application QCM </span>
 		<span id="positionUtilisateur">Utilisateur : <?php echo $prenom, ' ', $nom ?></span>
 		<span id="positionType">Type : <?php echo $type ?></span>
 	</div>
@@ -28,5 +28,53 @@ require('config.php');
 		<span><a id="positionDeconnexion" href="deconnexion.php">Se déconnecter </a></span>
 	</div>
 	<div>
-		<h3 style="color: blue"><center> Résultats par élève</center></h3>
+		<h3 style="color: blue"><center> Gestion des comptes</center></h3>
 	</div>
+	<div>
+		<center>
+			<table border="1">
+				<thead>
+					<tr>
+						<th> Identifiant </th>
+						<th> Nom </th>
+						<th> Prénom </th>
+						<th> Login </th>
+						<th> Mot de Passe </th>
+						<th> Type </th>
+						<th> Modification </th>
+						<th> Suppression </th>
+					</tr>
+					<?php
+
+					$sqlCompte = mysqli_query($connect, "SELECT utilisateurs.idUtilisateur, enseignant.idUtilisateur AS idEns, nom, prenom, login, motDePasse FROM utilisateurs, enseignant ");
+
+					while($data=mysqli_fetch_array($sqlCompte)) 
+					{
+						$idUtilisateur = $data['idUtilisateur'];
+						$Type = $data['idEns'];
+						$nom = $data ['nom'];
+					    $prenom = $data ['prenom'];
+					    $login = $data ['login'];
+					    $motDePasse = $data ['motDePasse'];
+
+						if ($idUtilisateur == $Type) 
+						{
+							$Type = 'Formateur';
+						}
+						else
+						{
+							$Type = 'Elève';
+						}
+
+						echo ('<tr><td>'.$idUtilisateur.'</td><td>'.$nom.'</td><td>'.$prenom.'</td><td>'.$login.'</td><td>'.$motDePasse.'</td><td>'.$Type.'</td><td><input type="submit" name="modifierCompte" value="modifier"></td><td><input type="submit" name="supprimerCompte" value="supprimer"></td></tr>');
+					}
+					?>
+				</thead>
+			</table>
+			<br>
+			<input type="submit" id='submit' name='Ajoututilisateur' value='Ajouter un utilisateur'></center>
+		</center>
+	</br>
+</div>
+</body>
+</html>

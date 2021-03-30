@@ -36,11 +36,11 @@ while($row=mysqli_fetch_array($sqlIdEleve)) // recupération de l'identifiant de
 }
 
 if ($idUtilisateur == @$idUtilisateurEnseignant) 
-    {
-        $type = 'Formateur';
-    }
+{
+    $type = 'Formateur';
+}
 elseif ($idUtilisateur == @$idUtilisateurEleve) 
-    {
-        $type = 'Elève';
-    }
+{
+    $type = 'Elève';
+}
 ?>

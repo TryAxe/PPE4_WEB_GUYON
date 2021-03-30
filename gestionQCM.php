@@ -15,7 +15,7 @@ require('config.php');
 </head>
 <body>
 	<div id="bandeau_bleu">
-		<span>Gestion des QCM </span>
+		<span>Application QCM</span>
 		<span id="positionUtilisateur">Utilisateur : <?php echo $prenom, ' ', $nom ?></span>
 		<span id="positionType">Type : <?php echo $type ?></span>
 	</div>
@@ -32,16 +32,16 @@ require('config.php');
 	</div>
 	<center>
 	</br></br></br></br>
-<div>
-	<input type=button onclick=window.location.href='affichageQCM.php'; value='Afficher un QCM' style="position: absolute; ;left: 2%; font-weight: bold;"/>
-	<span><IMG id="imagesGestionQCM1" SRC="checkList.jpg" ></IMG></span>
-	<input type=button onclick=window.location.href='ajouterQCM.php'; value='Ajouter un QCM' style="position: absolute; ;left: 20%; font-weight: bold; color: red;"/>
-	<span><IMG id="imagesGestionQCM2" SRC="caddie.jpg" ></IMG></span>
-	<input type=button onclick=window.location.href='modifierQCM.php'; value='Modifier un QCM' style="position: absolute; ;left: 40%; font-weight: bold; color: red;"/>
-	<span><IMG id="imagesGestionQCM3" SRC="crayon.png" ></IMG></span>
-	<input type=button onclick=window.location.href='supprimerQCM.php'; value='Supprimer un QCM' style="position: absolute; ;left: 60%; font-weight: bold;"/>
-	<span><IMG id="imagesGestionQCM4" SRC="corbeille.jpg" ></IMG></span>
-</div>	
+	<div>
+		<input type=button onclick=window.location.href='affichageQCM.php'; value='Afficher un QCM' style="position: absolute; ;left: 2%; font-weight: bold;"/>
+		<span><IMG id="imagesGestionQCM1" SRC="checkList.jpg" ></IMG></span>
+		<input type=button onclick=window.location.href='ajouterQCM.php'; value='Ajouter un QCM' style="position: absolute; ;left: 20%; font-weight: bold; color: red;"/>
+		<span><IMG id="imagesGestionQCM2" SRC="caddie.jpg" ></IMG></span>
+		<input type=button onclick=window.location.href='modifierQCM.php'; value='Modifier un QCM' style="position: absolute; ;left: 40%; font-weight: bold; color: red;"/>
+		<span><IMG id="imagesGestionQCM3" SRC="crayon.png" ></IMG></span>
+		<input type=button onclick=window.location.href='suppressionQCM.php'; value='Supprimer un QCM' style="position: absolute; ;left: 60%; font-weight: bold;"/>
+		<span><IMG id="imagesGestionQCM4" SRC="corbeille.jpg" ></IMG></span>
+	</div>	
 </center>
 </body>
 </html>

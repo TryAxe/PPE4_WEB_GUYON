@@ -32,18 +32,18 @@ require('config.php');
 	</div>
 	<div>
 		<center>
-		<span><h4>Séléction d'un QCM : <select name="listeQCM">
-			<?php
-			$sqlSelect = mysqli_query($connect, "SELECT Description, LibelleQCM  FROM theme, qcm WHERE theme.IdTheme=qcm.IdTheme" );
-			while($data=mysqli_fetch_array($sqlSelect)) 
-			    {
-			        echo '<option>'.$data['Description'].' : '.$data['LibelleQCM'].'</option>';
-			    }
-			?>
-		</select></h4>
-		<input type='submit' value='Afficher' style="font-weight: bold;" />
+			<span><h4>Séléction d'un QCM : <select name="listeQCM">
+				<?php
+				$sqlSelect = mysqli_query($connect, "SELECT Description, LibelleQCM  FROM theme, qcm WHERE theme.IdTheme=qcm.IdTheme" );
+				while($data=mysqli_fetch_array($sqlSelect)) 
+				{
+					echo '<option>'.$data['Description'].' : '.$data['LibelleQCM'].'</option>';
+				}
+				?>
+			</select></h4>
+			<input type='submit' value='Afficher' style="font-weight: bold;" />
 		</span>
-		</center>
-	</div>
+	</center>
+</div>
 </body>
 </html>
