@@ -9,13 +9,13 @@ require('config.php');
 	<!-- importe le fichier de style -->
 	<link rel="stylesheet" href="style.css" />
 
-	<title>Gestion des groupes</title>
+	<title>Interface Formateur</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
 	<div id="bandeau_bleu">
-		<span>Gestion des groupes </span>
+		<span>Application QCM</span>
 		<span id="positionUtilisateur">Utilisateur : <?php echo $prenom, ' ', $nom ?></span>
 		<span id="positionType">Type : <?php echo $type ?></span>
 	</div>
@@ -28,5 +28,22 @@ require('config.php');
 		<span><a id="positionDeconnexion" href="deconnexion.php">Se déconnecter </a></span>
 	</div>
 	<div>
-		<h3 style="color: blue"><center> Résultats par élève</center></h3>
+		<h3 style="color: blue"><center> Affectation d'un QCM</center></h3>
 	</div>
+	<div>
+		<center>
+		<span><h4>Séléction d'un QCM : <select name="listeQCM">
+			<?php
+			$sqlSelect = mysqli_query($connect, "SELECT Description, LibelleQCM  FROM theme, qcm WHERE theme.IdTheme=qcm.IdTheme" );
+			while($data=mysqli_fetch_array($sqlSelect)) 
+			    {
+			        echo '<option>'.$data['Description'].' : '.$data['LibelleQCM'].'</option>';
+			    }
+			?>
+		</select></h4>
+		<input type='submit' value='Afficher' style="font-weight: bold;" />
+		</span>
+		</center>
+	</div>
+</body>
+</html>

@@ -16,16 +16,16 @@ require('config.php');
 <body>
 	<div id="bandeau_bleu">
 		<span>Application QCM</span>
-		<span id="position1">Utilisateur : <?php echo $prenom, ' ', $nom ?></span>
-		<span id="position2">Type : <?php echo $type ?></span>
+		<span id="positionUtilisateur">Utilisateur : <?php echo $prenom, ' ', $nom ?></span>
+		<span id="positionType">Type : <?php echo $type ?></span>
 	</div>
 	<div id="bandeau_vert">
-		<span><a href="affectationQCM.php">Affectation d'un QCM</a> - </span>
-		<span><a href="resultats.php">Résultats</a> - </span>
-		<span><a href="gestionQCM.php">Gestiobn des QCM</a> - </span>
-		<span><a href="gestionComptes.php">Gestion des comptes</a> - </span>
-		<span><a href="gestionGroupes.php">Gestion des groupes</a> - </span>
-		<span><a href="deconnexion.php">Se déconnecter</a></span>
+		<span><a id="positionAffectationQCM" href="affectationQCM.php">Affectation d'un QCM </a>.</span>
+		<span><a id="positionResultats" href="resultats.php">Résultats </a></span>
+		<span><a id="positionGestionQCM" href="gestionQCM.php">Gestion des QCM </a></span>
+		<span><a id="positionGestionComptes" href="gestionComptes.php">Gestion des comptes </a></span>
+		<span><a id="positionGestionGroupes" href="gestionGroupes.php">Gestion des groupes </a></span>
+		<span><a id="positionDeconnexion" href="deconnexion.php">Se déconnecter </a></span>
 	</div>
 	<div>
 		<h3 style="color: blue"><center> Résultats par élève</center></h3>
@@ -53,8 +53,6 @@ require('config.php');
 					$prenom = $data ['prenom'];
 					$idUtilisateur = $data['idUtilisateur'];
 					$Type = $data['idEns'];
-					$idResultat = $data['idResult'];
-
 					if ($idUtilisateur == $Type) 
 					{
 					}
