@@ -31,7 +31,7 @@ input[type=password] {
 }
 
 /* Style des boutons*/
-input[type=submit] {
+input[name=formConnexion] {
     background-color: #53af57;
     color: white;
     padding: 14px 20px;
@@ -41,53 +41,138 @@ input[type=submit] {
     width: 100%;
 }
 
-input[type=submit]:hover {
+input[name=formConnexion]:hover {
     background-color: white;
     color: #53af57;
     border: 1px solid #53af57;
 }
 
+input[name=connexionInterface] {
+    background-color: #53af57;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[name=connexionInterface]:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+}
 /*Les bandeaux*/
-#bandeau_bleu {
-    font-weight: bold;
+#bandeau_bleu
+{
+    font-weight:bold;
     background-color: #b7f5fb;
     border: 1px solid #000000;
 }
 
-#bandeau_vert {
+#bandeau_vert
+{
     background-color: #b7fbcc;
     border: 1px solid #000000;
 }
 
 /*Position text*/
-#position1 {
-    position: absolute;
-    top: 9px;
-    right: 55%;
+#positionUtilisateur
+{
+    position: absolute; top: 9px; left: 500px;
 }
 
-#position2 {
-    position: absolute;
-    top: 9px;
-    right: 30%;
+#positionType
+{
+    position: absolute; top: 9px; right: 500px;
 }
 
+#positionAffectationQCM
+{
+    position: absolute; top: 30px; left: 20px;
+}
 
+#positionResultats
+{
+    position: absolute; top: 30px; left: 300px;
+}
+
+#positionGestionQCM
+{
+    position: absolute; top: 30px; left: 600px;
+}
+
+#positionGestionComptes
+{
+    position: absolute; top: 30px; left: 900px;
+}
+
+#positionGestionGroupes
+{
+    position: absolute; top: 30px; left: 1200px;
+    color: red;
+}
+
+#positionDeconnexion
+{
+    position: absolute; top: 30px; left: 1500px;
+}
 
 /*Images*/
 
-#image1 {
-    position: absolute;
-    top: 20%;
-    left: 55%;
-    width: 10%;
-    height: 30%;
+#image1
+{
+    position: absolute; top: 20%; left: 55%; width: 10%; height: 30%;
 }
 
-#image2 {
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    width: 20%;
-    height: 30%;
+#image2
+{
+    position: absolute; top: 20%; left: 30%; width: 20%; height: 30%;
 }
+
+#imagesGestionQCM1
+{
+    position: absolute;
+    top: 30%;
+    left: 2%;
+    width:200px; 
+    height:200px;
+}
+
+#imagesGestionQCM2
+{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width:200px; 
+    height:200px;
+}
+
+#imagesGestionQCM3
+{
+    position: absolute;
+    top: 30%;
+    left: 40%;    
+    width:200px; 
+    height:200px;
+}
+
+#imagesGestionQCM4
+{
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    width:200px; 
+    height:200px;
+}
+
+#affectationQCM
+{
+
+}
+
+#resultats
+#gestionQCM
+#gestionComptes
+#gestionGroupes
+#deconnexion

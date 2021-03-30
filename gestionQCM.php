@@ -9,13 +9,13 @@ require('config.php');
 	<!-- importe le fichier de style -->
 	<link rel="stylesheet" href="style.css" />
 
-	<title>Interface Formateur</title>
+	<title>Gestion des QCM</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
 	<div id="bandeau_bleu">
-		<span>Application QCM</span>
+		<span>Gestion des QCM </span>
 		<span id="positionUtilisateur">Utilisateur : <?php echo $prenom, ' ', $nom ?></span>
 		<span id="positionType">Type : <?php echo $type ?></span>
 	</div>
@@ -28,12 +28,20 @@ require('config.php');
 		<span><a id="positionDeconnexion" href="deconnexion.php">Se déconnecter </a></span>
 	</div>
 	<div>
-		<h3 style="color: blue"><center> Bienvenue sur l'application QCM</center></h3>
+		<h3 style="color: blue"><center> Gestion des QCM</center></h3>
 	</div>
-	<div>
-		<span><IMG id="image2" SRC="QCM.jpg"></span>
-		<span><IMG id="image1" SRC="chronomètre.png"></span>
-	</div>
-
+	<center>
+	</br></br></br></br>
+<div>
+	<input type=button onclick=window.location.href='affichageQCM.php'; value='Afficher un QCM' style="position: absolute; ;left: 2%; font-weight: bold;"/>
+	<span><IMG id="imagesGestionQCM1" SRC="checkList.jpg" ></IMG></span>
+	<input type=button onclick=window.location.href='ajouterQCM.php'; value='Ajouter un QCM' style="position: absolute; ;left: 20%; font-weight: bold; color: red;"/>
+	<span><IMG id="imagesGestionQCM2" SRC="caddie.jpg" ></IMG></span>
+	<input type=button onclick=window.location.href='modifierQCM.php'; value='Modifier un QCM' style="position: absolute; ;left: 40%; font-weight: bold; color: red;"/>
+	<span><IMG id="imagesGestionQCM3" SRC="crayon.png" ></IMG></span>
+	<input type=button onclick=window.location.href='supprimerQCM.php'; value='Supprimer un QCM' style="position: absolute; ;left: 60%; font-weight: bold;"/>
+	<span><IMG id="imagesGestionQCM4" SRC="corbeille.jpg" ></IMG></span>
+</div>	
+</center>
 </body>
 </html>
