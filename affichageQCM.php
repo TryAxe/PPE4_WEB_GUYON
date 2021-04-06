@@ -28,7 +28,7 @@ require('config.php');
 		<span><a id="positionDeconnexion" href="deconnexion.php">Se déconnecter </a></span>
 	</div>
 	<div>
-		<h3 style="color: blue"><center> Affectation d'un QCM</center></h3>
+		<h3 style="color: blue"><center> Affichage d'un QCM</center></h3>
 	</div>
 	<div>
 		<center>

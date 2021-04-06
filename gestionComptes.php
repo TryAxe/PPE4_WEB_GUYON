@@ -66,15 +66,34 @@ require('config.php');
 							$Type = 'Elève';
 						}
 
-						echo ('<tr><td>'.$idUtilisateur.'</td><td>'.$nom.'</td><td>'.$prenom.'</td><td>'.$login.'</td><td>'.$motDePasse.'</td><td>'.$Type.'</td><td><input type="submit" name="modifierCompte" value="modifier"></td><td><input type="submit" name="supprimerCompte" value="supprimer"></td></tr>');
+						echo ('<tr><td>'.$idUtilisateur.'</td><td>'.
+							$nom.'</td><td>'.
+							$prenom.'</td><td>'.
+							$login.'</td><td>'.
+							$motDePasse.'</td><td>'.
+							$Type.'</td><td>
+							<form method="POST"><input type="submit" id="submit" name="formModifUser" value="Modifier" style="color: red;"></center></form></td><td>
+							<form method="POST"><input type="submit" id="submit" name="formDelUser" value="Supprimer" style="color: red;"></center></form></td></tr>');
 					}
 					?>
 				</thead>
 			</table>
 			<br>
-			<input type="submit" id='submit' name='Ajoututilisateur' value='Ajouter un utilisateur'></center>
+			<form method="POST">
+			<input type="submit" id='submit' name='formAjoutUser' value='Ajouter un utilisateur'></center>
+		</form>	
 		</center>
 	</br>
 </div>
 </body>
 </html>
+<?php 
+if (isset($_POST['formAjoutUser']))
+{
+	header ("location: ajoutNewUser.php");
+}
+elseif (isset($_POST['formModifUser']))
+{
+	header ("location: modifierUser.php");
+}
+?>

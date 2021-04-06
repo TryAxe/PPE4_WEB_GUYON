@@ -14,10 +14,10 @@
             <h3 style="color: blue;">Acceuil du site QCM :</h3>
 
             <label><b>Login</b></label>
-            <input type="text" name="usernameConnect" class="form-control" required="required">
+            <input id="acceuilInput" type="text" name="usernameConnect" class="form-control" required="required">
 
             <label><b>Mot de passe</b></label>
-            <input type="password" name="passwordConnect">
+            <input id="acceuilInput" type="password" name="passwordConnect">
 
             <center> <input type="submit" id='submit' name='formConnexion' value='OK'></center>
             <h3>
